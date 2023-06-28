@@ -1,6 +1,5 @@
-import { Pool, QueryResultRow } from 'pg';
-import { tryCatch } from 'fp-ts/TaskEither';
-import { toError } from 'fp-ts/Either';
+import { Pool, QueryResult, QueryResultRow } from 'pg';
+import { Future } from 'funfix-exec';
 
 const pool = new Pool({
   host: process.env.DB_HOST || 'localhost',
@@ -10,5 +9,5 @@ const pool = new Pool({
   password: process.env.DB_PASSWORD || 'password',
 });
 
-export const query = async <T extends QueryResultRow>(text: string, params: any[]) =>
-  tryCatch(() => pool.query<T>(text, params), toError);
+export const query = <T extends QueryResultRow>(text: string, params?: any[]): Future<QueryResult<T>> => 
+  Future.fromPromise(pool.query<T>(text, params));
