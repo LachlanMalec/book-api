@@ -1,0 +1,19 @@
+{
+  "name": "book-api",
+  "version": "1.0.0",
+  "description": "a simple book api written in typescript with functional programming influences",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lachlanmalec/book-api.git"
+  },
+  "author": "Lachlan Malec",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/lachlanmalec/book-api/issues"
+  },
+  "homepage": "https://github.com/lachlanmalec/book-api#readme"
+}
